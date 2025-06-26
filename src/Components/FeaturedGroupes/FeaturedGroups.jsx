@@ -3,7 +3,13 @@ import GroupCard from "../GroupCard/GroupCard";
 import { useNavigate } from "react-router";
 import ItemsLoader from "../Loader/ItemsLoader";
 
-const FeaturedGroups = ({ className, title, showSeeAll, loderClass }) => {
+const FeaturedGroups = ({
+  className,
+  title,
+  showSeeAll,
+  loderClass,
+  sixCards,
+}) => {
   const [groupsData, setGroupsData] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -24,6 +30,21 @@ const FeaturedGroups = ({ className, title, showSeeAll, loderClass }) => {
       });
   }, []);
 
+  const today = new Date();
+
+  // Step 1: Filter only upcoming groups (startDate > today)
+  const upcomingGroups = groupsData.filter(
+    (group) => new Date(group.startDate) > today
+  );
+
+  // Step 2: Sort by soonest startDate (ascending)
+  const sortedUpcomingGroups = upcomingGroups.sort(
+    (a, b) => new Date(a.startDate) - new Date(b.startDate)
+  );
+
+  // Step 3: Take the first 8 upcoming groups
+  const sixGroups = sortedUpcomingGroups.slice(0, 6);
+
   if (loading) {
     return <ItemsLoader loderClass={loderClass} title={title}></ItemsLoader>;
   }
@@ -33,9 +54,13 @@ const FeaturedGroups = ({ className, title, showSeeAll, loderClass }) => {
       <h1 className="title text-center">{title}</h1>
 
       <div className={className}>
-        {groupsData.map((group) => (
-          <GroupCard key={group._id} group={group}></GroupCard>
-        ))}
+        {sixCards
+          ? sixGroups.map((group) => (
+              <GroupCard key={group._id} group={group}></GroupCard>
+            ))
+          : groupsData.map((group) => (
+              <GroupCard key={group._id} group={group}></GroupCard>
+            ))}
       </div>
 
       {showSeeAll && (

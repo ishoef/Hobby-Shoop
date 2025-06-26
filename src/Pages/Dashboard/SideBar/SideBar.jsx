@@ -5,12 +5,12 @@ import { Link } from "react-router";
 
 const SideBar = () => {
   return (
-    <div className="md:border border-gray-300 rounded-xl md:p-3">
+    <div className="md:border border-gray-300 dark:border-primary/10 rounded-xl md:p-3">
       <nav>
         <ul className="flex flex-col items-center gap-3 ">
           <Link
             to={"/dashboard/overview"}
-            className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
+            className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
           >
             <p className="flex items-center justify-center md:justify-start gap-3">
               <AiOutlineDashboard size={22} />
@@ -22,7 +22,7 @@ const SideBar = () => {
 
           <Link
             to={"/dashboard/users"}
-            className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
+            className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
           >
             <p className="flex items-center justify-center md:justify-start gap-3">
               <PiUsersThreeBold size={22} />
@@ -30,7 +30,7 @@ const SideBar = () => {
             </p>
           </Link>
 
-          <Link className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
+          <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
               <AiOutlineDashboard size={22} />
               <span className="hover:text-primary hidden md:block">
@@ -39,7 +39,7 @@ const SideBar = () => {
             </p>
           </Link>
 
-          <Link className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
+          <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
               <AiOutlineDashboard size={22} />
               <span className="hover:text-primary hidden md:block">
@@ -48,7 +48,7 @@ const SideBar = () => {
             </p>
           </Link>
 
-          <Link className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
+          <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
               <AiOutlineDashboard size={22} />
               <span className="hover:text-primary hidden md:block">
@@ -57,7 +57,7 @@ const SideBar = () => {
             </p>
           </Link>
 
-          <Link className="border w-full border-gray-300 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
+          <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
               <AiOutlineDashboard size={22} />
               <span className="hover:text-primary hidden md:block">

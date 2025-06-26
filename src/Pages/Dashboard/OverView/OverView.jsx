@@ -2,10 +2,12 @@ import React, { useEffect, useState } from "react";
 import State from "../State/State";
 import { LiaUsersSolid } from "react-icons/lia";
 import { FaLayerGroup } from "react-icons/fa";
+import Users from "../Users/Users";
 
 const OverView = () => {
   const [usersCount, setUsersCount] = useState(0);
 
+  // Users Data
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
@@ -14,6 +16,8 @@ const OverView = () => {
         console.log("the error fetching the users", error);
       });
   }, []);
+    
+    
 
   console.log(usersCount.length);
 
@@ -56,6 +60,9 @@ const OverView = () => {
             <State key={index} info={stat}></State>
           ))}
         </div>
+      </div>
+      <div className="mt-10">
+        <Users />
       </div>
     </div>
   );

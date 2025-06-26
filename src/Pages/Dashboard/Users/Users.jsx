@@ -12,19 +12,12 @@ const Users = () => {
       });
   }, []);
 
-  const date = new Date(userData.joinTime);
-  const joinDate = date.toLocaleDateString("en-US", {
-    day: "2-digit",
-    month: "2-digit",
-    year: "numeric",
-  });
-
   console.log(userData);
   return (
     <div>
       <div className="space-y-5 ">
-        <h1 className="text-3xl font-semibold text-primary">All Users</h1>
-        <hr className="border border-gray-300" />
+        <h1 className="text-3xl font-semibold text-primary">All Users ({`${userData.length}`|| 0}) </h1>
+        <hr className="border border-gray-300 dark:border-primary/10 " />
         <div>
           <div className="overflow-x-auto">
             <table className="table">
@@ -70,34 +63,49 @@ const Users = () => {
                     <td>
                       {new Date(user.joinTime).toLocaleDateString("en-US", {
                         day: "2-digit",
-                        month: "2-digit",
+                        month: "long",
                         year: "numeric",
                       })}
                       <br />
-                      <span>
-                        {new Date(user.joinTime).toLocaleTimeString("en-US", {
+
+                      {new Date(user.joinTime).toLocaleTimeString("en-US", {
+                        hour: "2-digit",
+                        minute: "2-digit",
+                        hour12: true,
+                      })}
+                    </td>
+                    <td>
+                      {new Date(user.lastSignInTime).toLocaleDateString(
+                        "en-US",
+                        {
+                          day: "2-digit",
+                          month: "long",
+                          year: "numeric",
+                        }
+                      )}
+                      <br />
+
+                      {new Date(user.lastSignInTime).toLocaleTimeString(
+                        "en-US",
+                        {
                           hour: "2-digit",
                           minute: "2-digit",
-                          second: "2-digit",
                           hour12: true,
-                        })}
-                      </span>
+                        }
+                      )}
                     </td>
-                    <th>
-                      <button className="btn btn-ghost btn-xs">details</button>
-                    </th>
                   </tr>
                 ))}
               </tbody>
               {/* foot */}
-              <tfoot>
+              {/* <tfoot>
                 <tr>
                   <th>Name</th>
                   <th>Job</th>
                   <th>Favorite Color</th>
                   <th></th>
                 </tr>
-              </tfoot>
+              </tfoot> */}
             </table>
           </div>
         </div>
