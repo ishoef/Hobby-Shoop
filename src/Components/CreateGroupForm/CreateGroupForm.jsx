@@ -89,6 +89,7 @@ const CreateGroupForm = ({ user }) => {
         <option value="Video Gaming">Video Gaming</option>
         <option value="Hiking">Hiking</option>
         <option value="Coding">Coding</option>
+        <option value="Eating">Eating</option>
       </select>
 
       <textarea

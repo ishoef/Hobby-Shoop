@@ -1,11 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import State from "../State/State";
 import { LiaUsersSolid } from "react-icons/lia";
 import { FaLayerGroup } from "react-icons/fa";
 import Users from "../Users/Users";
+import { AuthContext } from "../../../Context/AuthProvider";
+import MyGroupess from "../myGroupsss/MyGroupss";
 
 const OverView = () => {
+  const { user } = use(AuthContext);
   const [usersCount, setUsersCount] = useState(0);
+  const [allGroups, setAllGroups] = useState([]);
+  const [myGroups, setMyGroups] = useState([]);
 
   // Users Data
   useEffect(() => {
@@ -16,10 +21,43 @@ const OverView = () => {
         console.log("the error fetching the users", error);
       });
   }, []);
-    
-    
 
-  console.log(usersCount.length);
+  // All Groups Data
+  useEffect(() => {
+    fetch("https://hobby-shop-server-side.vercel.app/groups")
+      .then((res) => res.json())
+      .then((data) => {
+        setAllGroups(data);
+      })
+      .catch((error) => {
+        console.log("Failed to fetch groups data:", error);
+        setAllGroups([]);
+      });
+  }, []);
+
+  useEffect(() => {
+    if (user && user.email) {
+      fetch(
+        `https://hobby-shop-server-side.vercel.app/groups?userEmail=${user.email}`
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          setMyGroups(data);
+        })
+        .catch((err) => {
+          console.error("Failed to fetch user groups:", err);
+          setMyGroups([]);
+        });
+    } else {
+      // If user not ready yet, keep loading or handle it here
+      setMyGroups([]);
+    }
+  }, [user]);
+
+    console.log(usersCount.length);
+    
+    const usersGroup = allGroups.length - myGroups.length;
+    console.log(usersGroup);
 
   const stateInfo = [
     {
@@ -32,21 +70,21 @@ const OverView = () => {
     {
       icon: <FaLayerGroup />,
       title: "Total Groups",
-      count: "5000",
+      count: `${allGroups.length}`,
       parcent: "80% increase in 20 days",
     },
 
     {
-      icon: <LiaUsersSolid />,
-      title: "Total Students",
-      count: "5000",
+      icon: <FaLayerGroup />,
+      title: "My Groups",
+      count: `${myGroups.length}`,
       parcent: "80% increase in 20 days",
     },
 
     {
-      icon: <LiaUsersSolid />,
-      title: "Total Students",
-      count: "5000",
+      icon: <FaLayerGroup />,
+      title: "Users Groups",
+      count: `${usersGroup}`,
       parcent: "80% increase in 20 days",
     },
   ];
@@ -62,7 +100,8 @@ const OverView = () => {
         </div>
       </div>
       <div className="mt-10">
-        <Users />
+              <Users />
+              <MyGroupess/>
       </div>
     </div>
   );

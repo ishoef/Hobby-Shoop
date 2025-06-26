@@ -11,7 +11,7 @@ const State = ({ info }) => {
       </div>
       <div className=" w-full text-white dark:text-gray-300 space-y-2 ">
         <div className="text-2xl font-semibold  ">{title}</div>
-        <div className="font-semibold text-xl">{count}</div>
+        <div className="font-bold text-3xl ml-5">{count}</div>
         <div className="">{parcent}</div>
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import GroupTableRow from "../GroupTableRow/GroupTableRow";
+import GroupTableRow from "../../../Components/GroupTableRow/GroupTableRow";
 
 const CreatedGroups = ({ groups, setGroups }) => {
   useEffect(() => {
@@ -7,10 +7,10 @@ const CreatedGroups = ({ groups, setGroups }) => {
   }, []);
   
   return (
-    <div className="w-11/12 md:w-10/12 mx-auto py-10">
-      <h1 className="title text-center">My Groups</h1>
+    <div className="mx-auto mt-10">
+      <h1 className="title">My Groups ({ `${groups.length}` || 0})</h1>
       <div className="overflow-x-auto min-h-[calc(100vh-438px)]">
-        <table className="table table-lg border border-[#FF6B3580] rounded-2xl">
+        <table className="table table-lg border border-[#FF6B3580] dark:border-primary/20 rounded-2xl">
           <thead>
             <tr className="bg-primary dark:bg-gray-800 text-white text-[18px]">
               <th>Image</th>

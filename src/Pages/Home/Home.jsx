@@ -13,14 +13,14 @@ const Home = () => {
   const title = "Featured Groups";
 
   const className =
-    "grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-9/12 mx-auto";
+    "grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:w-11/12 mx-auto";
 
   const loderClass =
-    "grid md:grid-cols-2 lg:grid-cols-3 gap-5 lg:w-9/12 mx-auto";
+    "grid md:grid-cols-2 lg:grid-cols-4 gap-5 lg:w-11/12 mx-auto";
   return (
     <>
       <Slider></Slider>
-      <div className="w-11/12 md:w-10/12  mx-auto mt-10 md:mt-20 mb-10">
+      <div className="w-11/12 md:w-10/12  mx-auto mt-5 md:mt-10 mb-10">
         <FeaturedGroups
           loderClass={loderClass}
           className={className}

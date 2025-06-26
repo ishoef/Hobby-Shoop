@@ -1,5 +1,7 @@
 import React from "react";
 import { AiOutlineDashboard } from "react-icons/ai";
+import { FaLayerGroup } from "react-icons/fa";
+import { LiaUsersSolid } from "react-icons/lia";
 import { PiUsersThreeBold } from "react-icons/pi";
 import { Link } from "react-router";
 
@@ -13,7 +15,7 @@ const SideBar = () => {
             className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
           >
             <p className="flex items-center justify-center md:justify-start gap-3">
-              <AiOutlineDashboard size={22} />
+              <AiOutlineDashboard size={22} color="#ff6b35" />
               <span className="hover:text-primary hidden md:block">
                 Overview
               </span>
@@ -25,14 +27,26 @@ const SideBar = () => {
             className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
           >
             <p className="flex items-center justify-center md:justify-start gap-3">
-              <PiUsersThreeBold size={22} />
-              <span className="hover:text-primary hidden md:block">Users</span>
+              <PiUsersThreeBold size={22} color="#ff6b35" />
+              <span className="hover:text-primary hidden md:block">All Users</span>
+            </p>
+          </Link>
+
+          <Link
+            to="/dashboard/mygroups"
+            className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
+          >
+            <p className="flex items-center justify-center md:justify-start gap-3">
+              <FaLayerGroup size={20} color="#ff6b35" />
+              <span className="hover:text-primary hidden md:block">
+                My Groups
+              </span>
             </p>
           </Link>
 
           <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
-              <AiOutlineDashboard size={22} />
+              <AiOutlineDashboard size={22} color="#ff6b35" />
               <span className="hover:text-primary hidden md:block">
                 Overview
               </span>
@@ -41,7 +55,7 @@ const SideBar = () => {
 
           <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
-              <AiOutlineDashboard size={22} />
+              <AiOutlineDashboard size={22} color="#ff6b35" />
               <span className="hover:text-primary hidden md:block">
                 Overview
               </span>
@@ -50,16 +64,7 @@ const SideBar = () => {
 
           <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
             <p className="flex items-center justify-center md:justify-start gap-3">
-              <AiOutlineDashboard size={22} />
-              <span className="hover:text-primary hidden md:block">
-                Overview
-              </span>
-            </p>
-          </Link>
-
-          <Link className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 ">
-            <p className="flex items-center justify-center md:justify-start gap-3">
-              <AiOutlineDashboard size={22} />
+              <AiOutlineDashboard size={22} color="#ff6b35" />
               <span className="hover:text-primary hidden md:block">
                 Overview
               </span>

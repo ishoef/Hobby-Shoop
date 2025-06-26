@@ -43,7 +43,7 @@ const FeaturedGroups = ({
   );
 
   // Step 3: Take the first 8 upcoming groups
-  const sixGroups = sortedUpcomingGroups.slice(0, 6);
+  const sixGroups = sortedUpcomingGroups.slice(0, 8);
 
   if (loading) {
     return <ItemsLoader loderClass={loderClass} title={title}></ItemsLoader>;

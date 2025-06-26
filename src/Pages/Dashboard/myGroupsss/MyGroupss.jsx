@@ -1,15 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
-import CreatedGroups from "../../Components/CreatedGroups/CreatedGroups";
-import NoCreatedGroups from "../../Components/NoCreatedGroups/NoCreatedGroups";
-import { AuthContext } from "../../Context/AuthProvider";
-import PreLoader from "../../Components/Loader/PreLoader/PreLoader";
+import NoCreatedGroups from "../../../Components/NoCreatedGroups/NoCreatedGroups";
+import PreLoader from "../../../Components/Loader/PreLoader/PreLoader";
+import { AuthContext } from "../../../Context/AuthProvider";
+import CreatedGroups from "../CreatedGroups/CreatedGroups";
 
-const MyGroupes = () => {
+const MyGroupess = () => {
   const { user } = useContext(AuthContext);
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const className = 'flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]'
+  const className =
+    "flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]";
   // Set the document title
   useEffect(() => {
     document.title = "My Groups | Hobby Shop";
@@ -53,4 +54,4 @@ const MyGroupes = () => {
   );
 };
 
-export default MyGroupes;
+export default MyGroupess;

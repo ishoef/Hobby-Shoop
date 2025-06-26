@@ -1,22 +1,40 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router";
+import PreLoader from "../../../Components/Loader/PreLoader/PreLoader";
 
 const Users = () => {
   const [userData, setUserData] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  const className =
+    "flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]";
 
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((res) => res.json())
-      .then((data) => setUserData(data))
+      .then((data) => {
+        setUserData(data);
+        setLoading(false);
+      })
       .catch((error) => {
-        console.log("the error fetching the users", error);
+          console.log("the error fetching the users", error);
+          setUserData([]);
+          setLoading(false);
       });
   }, []);
+
+  if (loading) {
+    // return <NormalLoader></NormalLoader>
+    return <PreLoader className={className}></PreLoader>;
+  }
 
   console.log(userData);
   return (
     <div>
       <div className="space-y-5 ">
-        <h1 className="text-3xl font-semibold text-primary">All Users ({`${userData.length}`|| 0}) </h1>
+        <h1 className="text-3xl font-semibold text-primary">
+          All Users ({`${userData.length}` || 0}){" "}
+        </h1>
         <hr className="border border-gray-300 dark:border-primary/10 " />
         <div>
           <div className="overflow-x-auto">
@@ -54,7 +72,7 @@ const Users = () => {
                       </div>
                     </td>
                     <td>
-                      {user.email}
+                      <Link to={`mailto:${user.email}`}>{user.email}</Link>
                       <br />
                       {/* <span className="badge badge-ghost badge-sm">
                         Desktop Support Technician
