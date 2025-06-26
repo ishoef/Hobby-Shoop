@@ -47,9 +47,11 @@ const MyGroupess = () => {
     return <NoCreatedGroups />;
   }
 
+  const title = "My Groups";
+
   return (
     <div>
-      <CreatedGroups groups={groups} setGroups={setGroups} />
+      <CreatedGroups title={title} buttonShow={true} groups={groups} setGroups={setGroups} />
     </div>
   );
 };

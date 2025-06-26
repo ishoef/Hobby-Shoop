@@ -30,10 +30,10 @@ const Users = () => {
 
   console.log(userData);
   return (
-    <div>
+    <div className="mb-10">
       <div className="space-y-5 ">
         <h1 className="text-3xl font-semibold text-primary">
-          All Users ({`${userData.length}` || 0}){" "}
+          All Users ({userData?.length || 0})
         </h1>
         <hr className="border border-gray-300 dark:border-primary/10 " />
         <div>

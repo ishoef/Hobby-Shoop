@@ -31,7 +31,7 @@ const Header = () => {
 
   return (
     <>
-      <header className="relative py-5 border-b border-b-gray-300 shadow">
+      <header className="sticky top-0 bg-[#f9f0ed] z-50 py-5 border-b border-b-gray-300 shadow">
         <div className="flex items-center justify-between w-11/12 lg:w-10/12 mx-auto">
           <Logo></Logo>
 
@@ -116,7 +116,10 @@ const Header = () => {
                     />
                   </div>
                 </Link>
-                <Link to="/dashboard" className="bg-primary btn p-2 text-2xl text-white rounded">
+                <Link
+                  to="/dashboard"
+                  className="bg-primary btn p-2 text-2xl text-white rounded"
+                >
                   <MdDashboard />
                 </Link>
               </>

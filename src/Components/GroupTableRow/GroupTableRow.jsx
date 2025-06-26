@@ -4,8 +4,7 @@ import { MdDelete } from "react-icons/md";
 import { Link } from "react-router";
 import Swal from "sweetalert2";
 
-const GroupTableRow = ({ group, groups, setGroups }) => {
-  
+const GroupTableRow = ({ group, groups, setGroups, buttonShow }) => {
   // This function will be called when the delete button is clicked
   const handleDelete = () => {
     console.log(`Deleting group with ID: ${group._id}`);
@@ -58,22 +57,24 @@ const GroupTableRow = ({ group, groups, setGroups }) => {
       <td>{group.maxMembers}</td>
       <td>{group.location}</td>
       <td>{group.startDate}</td>
-      <td className="space-y-3">
-        <Link
-          to={`/mygroups/update/${group._id}`}
-          type="button"
-          className="hover:scale-102 hover:shadow cursor-pointer bg-primary w-fit flex items-center justify-center p-2 rounded"
-        >
-          <IoCreateOutline color="white" />
-        </Link>
-        <button
-          onClick={() => handleDelete(group._id)}
-          type="button"
-          className="hover:scale-102 hover:shadow cursor-pointer bg-primary w-fit flex items-center justify-center p-2 rounded"
-        >
-          <MdDelete color="white" />
-        </button>
-      </td>
+      {buttonShow && (
+        <td className="space-y-3">
+          <Link
+            to={`/mygroups/update/${group._id}`}
+            type="button"
+            className="hover:scale-102 hover:shadow cursor-pointer bg-primary w-fit flex items-center justify-center p-2 rounded"
+          >
+            <IoCreateOutline color="white" />
+          </Link>
+          <button
+            onClick={() => handleDelete(group._id)}
+            type="button"
+            className="hover:scale-102 hover:shadow cursor-pointer bg-primary w-fit flex items-center justify-center p-2 rounded"
+          >
+            <MdDelete color="white" />
+          </button>
+        </td>
+      )}
     </tr>
   );
 };

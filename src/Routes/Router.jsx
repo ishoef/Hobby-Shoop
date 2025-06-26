@@ -16,6 +16,7 @@ import Dashboard from "../Pages/Dashboard/Dashboard";
 import OverView from "../Pages/Dashboard/OverView/OverView";
 import Users from "../Pages/Dashboard/Users/Users";
 import MyGroupess from "../Pages/Dashboard/myGroupsss/MyGroupss";
+import AllGroupssTable from "../Pages/Dashboard/AllGroupssTable/AllGroupssTable";
 
 export const router = createBrowserRouter([
   {
@@ -98,6 +99,14 @@ export const router = createBrowserRouter([
           {
             path: "/dashboard/mygroups",
             Component: MyGroupess,
+          },
+          {
+            path: "/dashboard/creategroup",
+            Component: CreateGroup,
+          },
+          {
+            path: "/dashboard/allgroups",
+            Component: AllGroupssTable,
           }
         ],
       },
