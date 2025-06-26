@@ -12,6 +12,7 @@ const Home = () => {
   React.useEffect(() => {
     document.title = "Home | Hobby Shop";
   }, []);
+  
   const title = "Featured Groups";
 
   // Fetch groups data from the server

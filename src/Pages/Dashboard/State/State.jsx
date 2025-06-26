@@ -1,0 +1,21 @@
+import React from "react";
+
+const State = ({ info }) => {
+
+    const { title, count, parcent, icon } = info;
+
+  return (
+    <div className=" bg-primary rounded shadow border-gray-400 p-5 flex gap-3">
+      <div className=" flex justify-center items-center">
+        <div className=" w-14 h-14 bg-white text-primary rounded-full flex justify-center items-center text-3xl ">{icon}</div>
+      </div>
+      <div className=" w-full text-white space-y-2 ">
+        <div className="text-2xl font-semibold  ">{title}</div>
+        <div className="font-semibold text-xl">{count}</div>
+        <div className="">{parcent}</div>
+      </div>
+    </div>
+  );
+};
+
+export default State;

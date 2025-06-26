@@ -12,6 +12,9 @@ import MyGroupes from "../Pages/MyGroupes/MyGroupes";
 import MyProfile from "../Pages/MyProfile/MyProfile";
 import GroupDetails from "../Components/GroupDetails/GroupDetails";
 import UpdateGroupData from "../Components/UpdateGroupData/UpdateGroupData";
+import Dashboard from "../Pages/Dashboard/Dashboard";
+import OverView from "../Pages/Dashboard/OverView/OverView";
+import Users from "../Pages/Dashboard/Users/Users";
 
 export const router = createBrowserRouter([
   {
@@ -74,6 +77,24 @@ export const router = createBrowserRouter([
             <MyProfile></MyProfile>
           </PrivateRoute>
         ),
+      },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+        children: [
+          {
+            index: true,
+            Component: OverView,
+          },
+          {
+            path: "/dashboard/overview",
+            Component: OverView,
+          },
+          {
+            path: "/dashboard/users",
+            Component: Users,
+          },
+        ],
       },
       {
         path: "/auth",
