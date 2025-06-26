@@ -128,14 +128,7 @@ const Header = () => {
             )}
 
             {/* login & Logout Button */}
-            {user ? (
-              <button
-                onClick={handleLogOut}
-                className="hidden lg:block btn btn-primary"
-              >
-                Log Out
-              </button>
-            ) : (
+            {!user && (
               <Link to="/auth/login">
                 <button className="btn btn-primary text-[16px] ">Login</button>
               </Link>

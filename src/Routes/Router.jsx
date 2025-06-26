@@ -82,7 +82,11 @@ export const router = createBrowserRouter([
       },
       {
         path: "/dashboard",
-        element: <Dashboard />,
+        element: (
+          <PrivateRoute>
+            <Dashboard />
+          </PrivateRoute>
+        ),
         children: [
           {
             index: true,
@@ -107,7 +111,7 @@ export const router = createBrowserRouter([
           {
             path: "/dashboard/allgroups",
             Component: AllGroupssTable,
-          }
+          },
         ],
       },
       {
@@ -122,7 +126,6 @@ export const router = createBrowserRouter([
             path: "/auth/login",
             Component: Login,
           },
-          
         ],
       },
     ],
