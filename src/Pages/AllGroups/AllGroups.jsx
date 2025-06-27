@@ -20,6 +20,7 @@ const AllGroups = () => {
           loderClass={className}
           className={className}
           showSeeAll={false}
+          sixCards={false}
         ></FeaturedGroups>
       </div>
     </div>

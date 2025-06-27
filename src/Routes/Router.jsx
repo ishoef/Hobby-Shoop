@@ -17,6 +17,7 @@ import OverView from "../Pages/Dashboard/OverView/OverView";
 import Users from "../Pages/Dashboard/Users/Users";
 import MyGroupess from "../Pages/Dashboard/myGroupsss/MyGroupss";
 import AllGroupssTable from "../Pages/Dashboard/AllGroupssTable/AllGroupssTable";
+import Upcomming from "../Components/UpComming/Upcomming";
 
 export const router = createBrowserRouter([
   {
@@ -127,6 +128,10 @@ export const router = createBrowserRouter([
             Component: Login,
           },
         ],
+      },
+      {
+        path: "/upcomming",
+        Component: Upcomming
       },
     ],
   },

@@ -33,9 +33,9 @@ const Footer = () => {
         </aside>
         <nav>
           <h6 className="footer-title">Services</h6>
-          <a className="link link-hover">Terms of Service</a>
-          <a className="link link-hover">Privacy Policy</a>
-          <a className="link link-hover">Developer Resources</a>
+          <Link to={"/upcomming"} className="link link-hover">Terms of Service</Link>
+          <Link to={"/upcomming"} className="link link-hover">Privacy Policy</Link>
+          <Link to={"/upcomming"} className="link link-hover">Developer Resources</Link>
         </nav>
         <div className="">
           <h1 className="footer-title">NewsLetter</h1>
