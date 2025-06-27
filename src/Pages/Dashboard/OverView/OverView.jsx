@@ -9,23 +9,23 @@ import AllGroupssTable from "../AllGroupssTable/AllGroupssTable";
 
 const OverView = () => {
   const { user } = use(AuthContext);
-  const [usersCount, setUsersCount] = useState([]);
+
   const [allGroups, setAllGroups] = useState([]);
   const [myGroups, setMyGroups] = useState([]);
 
-  // Users Data
-  useEffect(() => {
-    fetch("http://localhost:3000/users")
-      .then((res) => res.json())
-      .then((data) => setUsersCount(data))
-      .catch((error) => {
-        console.log("the error fetching the users", error);
-      });
-  }, []);
+  // // Users Data
+  // useEffect(() => {
+  //   fetch("https://hobby-shop-server.vercel.app/users")
+  //     .then((res) => res.json())
+  //     .then((data) => setUsersCount(data))
+  //     .catch((error) => {
+  //       console.log("the error fetching the users", error);
+  //     });
+  // }, []);
 
   // All Groups Data
   useEffect(() => {
-    fetch("https://hobby-shop-server-side.vercel.app/groups")
+    fetch("https://hobby-shop-server.vercel.app/groups")
       .then((res) => res.json())
       .then((data) => {
         setAllGroups(data);
@@ -39,7 +39,7 @@ const OverView = () => {
   useEffect(() => {
     if (user && user.email) {
       fetch(
-        `https://hobby-shop-server-side.vercel.app/groups?userEmail=${user.email}`
+        `https://hobby-shop-server.vercel.app/groups?userEmail=${user.email}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -55,16 +55,16 @@ const OverView = () => {
     }
   }, [user]);
 
-    console.log(usersCount.length);
-    
-    const usersGroup = allGroups.length - myGroups.length;
-    console.log(usersGroup);
+  // console.log(usersCount.length);
+
+  const usersGroup = allGroups.length - myGroups.length;
+  console.log(usersGroup);
 
   const stateInfo = [
     {
       icon: <LiaUsersSolid />,
       title: "Total Users",
-      count: `${usersCount.length}`,
+      count: 20,
       parcent: "80% increase in 20 days",
     },
 
@@ -101,8 +101,8 @@ const OverView = () => {
         </div>
       </div>
       <div className="mt-10">
-              <Users />
-              <MyGroupess/>
+        {/* <Users /> */}
+        <MyGroupess />
       </div>
     </div>
   );

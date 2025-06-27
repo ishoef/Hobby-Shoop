@@ -28,7 +28,7 @@ export const router = createBrowserRouter([
         path: "/",
         index: true,
         loader: () => {
-          return fetch("https://hobby-shop-server-side.vercel.app/groups");
+          return fetch("https://hobby-shop-server.vercel.app/groups");
         },
         Component: Home,
       },
@@ -60,7 +60,7 @@ export const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: () => {
-          return fetch("https://hobby-shop-server-side.vercel.app/groups");
+          return fetch("https://hobby-shop-server.vercel.app/groups");
         },
       },
       {
@@ -68,7 +68,7 @@ export const router = createBrowserRouter([
         Component: UpdateGroupData,
         loader: ({ params }) => {
           return fetch(
-            `https://hobby-shop-server-side.vercel.app/groups/${params.id}`
+            `https://hobby-shop-server.vercel.app/groups/${params.id}`
           );
         },
       },

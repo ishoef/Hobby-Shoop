@@ -32,7 +32,7 @@ const UpdateGroupData = () => {
     console.log("Updated Group Data:", updatedGroup);
 
     // Send updated data to the server
-    fetch(`https://hobby-shop-server-side.vercel.app/groups/${groupData._id}`, {
+    fetch(`https://hobby-shop-server.vercel.app/groups/${groupData._id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",
@@ -48,7 +48,7 @@ const UpdateGroupData = () => {
             text: "Group updated successfully.",
             icon: "success",
             confirmButtonText: "OK",
-            allowOutsideClick: false, 
+            allowOutsideClick: false,
           }).then((result) => {
             if (result.isConfirmed) {
               // Redirect after clicking OK

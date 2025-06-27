@@ -17,7 +17,7 @@ const FeaturedGroups = ({
 
   // Fetch groups data from the server
   useEffect(() => {
-    fetch("https://hobby-shop-server-side.vercel.app/groups")
+    fetch("https://hobby-shop-server.vercel.app/groups")
       .then((res) => res.json())
       .then((data) => {
         setGroupsData(data);

@@ -4,7 +4,6 @@ import PreLoader from "../../../Components/Loader/PreLoader/PreLoader";
 import CreatedGroups from "../CreatedGroups/CreatedGroups";
 
 const AllGroupssTable = () => {
-  
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -16,7 +15,7 @@ const AllGroupssTable = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`https://hobby-shop-server-side.vercel.app/groups`)
+    fetch(`https://hobby-shop-server.vercel.app/groups`)
       .then((res) => res.json())
       .then((data) => {
         setGroups(data);
@@ -37,8 +36,8 @@ const AllGroupssTable = () => {
   if (!groups || groups.length === 0) {
     return <NoCreatedGroups />;
   }
-  
-    const title = "All Groups";
+
+  const title = "All Groups";
 
   return (
     <div>

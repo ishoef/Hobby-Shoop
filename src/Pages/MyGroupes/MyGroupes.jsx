@@ -9,7 +9,8 @@ const MyGroupes = () => {
   const [groups, setGroups] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  const className = 'flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]'
+  const className =
+    "flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]";
   // Set the document title
   useEffect(() => {
     document.title = "My Groups | Hobby Shop";
@@ -18,7 +19,7 @@ const MyGroupes = () => {
   useEffect(() => {
     if (user && user.email) {
       fetch(
-        `https://hobby-shop-server-side.vercel.app/groups?userEmail=${user.email}`
+        `https://hobby-shop-server.vercel.app/groups?userEmail=${user.email}`
       )
         .then((res) => res.json())
         .then((data) => {

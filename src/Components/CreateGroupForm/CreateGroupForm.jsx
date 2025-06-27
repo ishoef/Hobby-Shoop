@@ -31,7 +31,7 @@ const CreateGroupForm = ({ user }) => {
     console.log(formData);
 
     // send data to the server
-    fetch("https://hobby-shop-server-side.vercel.app/groups", {
+    fetch("https://hobby-shop-server.vercel.app/groups", {
       method: "POST",
       headers: {
         "content-type": "application/json",

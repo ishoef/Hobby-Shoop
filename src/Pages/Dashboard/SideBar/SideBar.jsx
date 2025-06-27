@@ -69,7 +69,7 @@ const SideBar = () => {
               </p>
             </Link>
 
-            <Link
+            {/* <Link
               to={"/dashboard/users"}
               className="border w-full border-gray-300 dark:border-primary/10 rounded hover:bg-gray-200 dark:hover:bg-gray-700 dark:hover:text-primary p-2 "
             >
@@ -79,7 +79,7 @@ const SideBar = () => {
                   All Users
                 </span>
               </p>
-            </Link>
+            </Link> */}
 
             <Link
               to="/dashboard/mygroups"

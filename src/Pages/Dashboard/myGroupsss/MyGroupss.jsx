@@ -19,7 +19,7 @@ const MyGroupess = () => {
   useEffect(() => {
     if (user && user.email) {
       fetch(
-        `https://hobby-shop-server-side.vercel.app/groups?userEmail=${user.email}`
+        `https://hobby-shop-server.vercel.app/groups?userEmail=${user.email}`
       )
         .then((res) => res.json())
         .then((data) => {
@@ -51,7 +51,12 @@ const MyGroupess = () => {
 
   return (
     <div>
-      <CreatedGroups title={title} buttonShow={true} groups={groups} setGroups={setGroups} />
+      <CreatedGroups
+        title={title}
+        buttonShow={true}
+        groups={groups}
+        setGroups={setGroups}
+      />
     </div>
   );
 };

@@ -10,16 +10,17 @@ const Users = () => {
     "flex justify-center items-center min-h-screen md:min-h-[calc(100vh-300px)]";
 
   useEffect(() => {
-    fetch("http://localhost:3000/users")
+    fetch("https://hobby-shop-server.vercel.app/users")
       .then((res) => res.json())
       .then((data) => {
         setUserData(data);
         setLoading(false);
+        console.log(data);
       })
       .catch((error) => {
-          console.log("the error fetching the users", error);
-          setUserData([]);
-          setLoading(false);
+        console.log("the error fetching the users", error);
+        setUserData([]);
+        setLoading(false);
       });
   }, []);
 
